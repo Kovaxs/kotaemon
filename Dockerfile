@@ -104,15 +104,15 @@ RUN apt-get autoremove \
 
 ENTRYPOINT ["sh", "/app/launch.sh"]
 
-# Ollama-bundled version
-FROM full AS ollama
+# # Ollama-bundled version
+# FROM full AS ollama
 
-# Install ollama
-RUN --mount=type=ssh  \
-    --mount=type=cache,target=/root/.cache/pip  \
-    curl -fsSL https://ollama.com/install.sh | sh
+# # Install ollama
+# RUN --mount=type=ssh  \
+#     --mount=type=cache,target=/root/.cache/pip  \
+#     curl -fsSL https://ollama.com/install.sh | sh
 
-# RUN nohup bash -c "ollama serve &" && sleep 4 && ollama pull qwen2.5:7b
-RUN nohup bash -c "ollama serve &" && sleep 4 && ollama pull nomic-embed-text
+# # RUN nohup bash -c "ollama serve &" && sleep 4 && ollama pull qwen2.5:7b
+# RUN nohup bash -c "ollama serve &" && sleep 4 && ollama pull nomic-embed-text
 
-ENTRYPOINT ["sh", "/app/launch.sh"]
+# ENTRYPOINT ["sh", "/app/launch.sh"]
